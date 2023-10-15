@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class sec1_11 {
 
     public String solution(String s) {
         String answer = "";
@@ -20,10 +20,10 @@ public class Main {
         return answer;
     }
 
-    public static void main(String[] args) {
-        Main main = new Main();
+    public static void sec1_11(String[] args) {
+        sec1_11 sec1_11 = new sec1_11();
         Scanner scanner = new Scanner(System.in);
         String next = scanner.next();
-        System.out.println(main.solution(next));
+        System.out.println(sec1_11.solution(next));
     }
 }
