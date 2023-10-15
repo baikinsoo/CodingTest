@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class sec1_12 {
 
     public String solution(int num, String str) {
         String answer = "";
@@ -13,12 +13,12 @@ public class Main {
         return answer;
     }
 
-    public static void main(String[] args) {
-        Main main = new Main();
+    public static void sec1_12(String[] args) {
+        sec1_12 sec1_12 = new sec1_12();
         Scanner scanner = new Scanner(System.in);
         int next = scanner.nextInt();
         String next1 = scanner.next();
-        System.out.println(main.solution(next, next1));
+        System.out.println(sec1_12.solution(next, next1));
 
     }
 }
