@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Main {
+public class sec2_6 {
 
     public boolean isPrime(int num) {
         if (num == 1) {
@@ -15,34 +15,32 @@ public class Main {
         return true;
     }
 
-    public ArrayList<Integer> solution(int[] ints) {
+    public ArrayList<Integer> solution(int num, int[] ints) {
 
         ArrayList<Integer> answer = new ArrayList<>();
 
-        for (int x : ints) {
-            int tmp = x;
-            int newNum = 0;
-            while (tmp > 0) {
-                int t = tmp % 10;
-                newNum = newNum * 10 + t;
-                tmp = tmp / 10;
+        for (int i = 0; i < ints.length; i++) {
+
+            int rNum=0;
+            while (ints[i] != 0) {
+                int tmp = ints[i]%10;
+                rNum = rNum * 10 + tmp;
+                ints[i] /= 10;
             }
-            if (isPrime(newNum)) {
-                answer.add(newNum);
-            }
+            if (isPrime(rNum)) answer.add(rNum);
         }
         return answer;
     }
 
-    public static void main(String[] args) {
-        Main main = new Main();
+    public static void sec2_6(String[] args) {
+        sec2_6 sec2_6 = new sec2_6();
         Scanner scanner = new Scanner(System.in);
         int iNum = scanner.nextInt();
         int[] ints = new int[iNum];
         for (int i = 0; i < iNum; i++) {
             ints[i] = scanner.nextInt();
         }
-        for (int x : main.solution(ints)) {
+        for (int x : sec2_6.solution(iNum, ints)) {
             System.out.print(x + " ");
         }
     }
