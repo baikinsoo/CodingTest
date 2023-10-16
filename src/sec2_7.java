@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class sec2_7 {
 
     public int solution(int iNUm, int[] ints) {
 
@@ -18,14 +18,14 @@ public class Main {
         return answer;
     }
 
-    public static void main(String[] args) {
-        Main main = new Main();
+    public static void sec2_7(String[] args) {
+        sec2_7 sec2_7 = new sec2_7();
         Scanner scanner = new Scanner(System.in);
         int iNum = scanner.nextInt();
         int[] ints = new int[iNum];
         for (int i = 0; i < iNum; i++) {
             ints[i] = scanner.nextInt();
         }
-        System.out.println(main.solution(iNum, ints));
+        System.out.println(sec2_7.solution(iNum, ints));
     }
 }
