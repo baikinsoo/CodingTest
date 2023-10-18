@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class sec2_10 {
 
     public int solution(int iNum, int[][] ints) {
 
@@ -27,8 +27,8 @@ public class Main {
         return answer;
     }
 
-    public static void main(String[] args) {
-        Main main = new Main();
+    public static void sec2_10(String[] args) {
+        sec2_10 sec2_10 = new sec2_10();
         Scanner scanner = new Scanner(System.in);
         int iNum = scanner.nextInt();
         int[][] ints = new int[iNum][iNum];
@@ -37,6 +37,6 @@ public class Main {
                 ints[i][j] = scanner.nextInt();
             }
         }
-        System.out.println(main.solution(iNum, ints));
+        System.out.println(sec2_10.solution(iNum, ints));
     }
 }
