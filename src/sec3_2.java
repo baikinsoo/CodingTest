@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+public class sec3_2 {
 
     public ArrayList<Integer> solution(int n, int m, int[] arr1, int[] arr2) {
 
@@ -25,8 +25,8 @@ public class Main {
         return answer;
     }
 
-    public static void main(String[] args) {
-        Main main = new Main();
+    public static void sec3_2(String[] args) {
+        sec3_2 sec3_2 = new sec3_2();
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int[] arr1 = new int[n];
@@ -38,7 +38,7 @@ public class Main {
         for (int i = 0; i < m; i++) {
             arr2[i] = scanner.nextInt();
         }
-        for (int x : main.solution(n, m, arr1, arr2)) {
+        for (int x : sec3_2.solution(n, m, arr1, arr2)) {
             System.out.print(x+ " ");
         }
     }
