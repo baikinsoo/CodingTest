@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class sec3_6 {
 
     public int solution(int n, int m, int[] arr) {
 
@@ -21,8 +21,8 @@ public class Main {
         return answer;
     }
 
-    public static void main(String[] args) {
-        Main main = new Main();
+    public static void sec3_6(String[] args) {
+        sec3_6 sec3_6 = new sec3_6();
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int m = scanner.nextInt();
@@ -30,6 +30,6 @@ public class Main {
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
-        System.out.println(main.solution(n, m, arr));
+        System.out.println(sec3_6.solution(n, m, arr));
     }
 }

@@ -1,28 +1,28 @@
 import java.util.Scanner;
 
-public class Main {
+public class sec3_4 {
 
     public int solution(int n, int m, int[] arr) {
 
-        int answer = 0, lt = 0, cnt = 0;
+        int answer = 0, sum = 0, lt = 0;
 
         for (int rt = 0; rt < n; rt++) {
-            if (arr[rt] == 0) {
-                cnt++;
+            sum += arr[rt];
+            if (sum == m) {
+                answer++;
             }
-            while (cnt > m) {
-                if (arr[lt] == 0) {
-                    cnt--;
+            while (sum >= m) {
+                sum -= arr[lt++];
+                if (sum == m) {
+                    answer++;
                 }
-                lt++;
             }
-            answer = Math.max(answer, rt - lt + 1);
         }
         return answer;
     }
 
-    public static void main(String[] args) {
-        Main main = new Main();
+    public static void sec3_4(String[] args) {
+        sec3_4 sec3_4 = new sec3_4();
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int m = scanner.nextInt();
@@ -30,6 +30,6 @@ public class Main {
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
-        System.out.println(main.solution(n, m, arr));
+        System.out.println(sec3_4.solution(n,m,arr));
     }
 }
