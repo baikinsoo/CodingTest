@@ -1,23 +1,21 @@
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
 
-    public int solution(int n, int m, int[] arr) {
+    public ArrayList<Integer> solution(int n, int k, int[] arr) {
 
-        int answer = 0, lt = 0, cnt = 0;
+        ArrayList<Integer> answer = new ArrayList<>();
 
-        for (int rt = 0; rt < n; rt++) {
-            if (arr[rt] == 0) {
-                cnt++;
-            }
-            while (cnt > m) {
-                if (arr[lt] == 0) {
-                    cnt--;
-                }
-                lt++;
-            }
-            answer = Math.max(answer, rt - lt + 1);
-        }
+        HashMap<Integer, Integer> HM = new HashMap<>();
+
+        for (int i = 0; i < k; i++) {
+            HM.put(arr[i], HM.getOrDefault(arr[i], 0) + 1);
+        } //여기까지하면 answer를 위한 HM 완성
+
+        int lt=0;
+
         return answer;
     }
 
@@ -25,11 +23,14 @@ public class Main {
         Main main = new Main();
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int m = scanner.nextInt();
-        int[] arr = new int[n];
+        int k = scanner.nextInt();
+        int[] ints = new int[n];
         for (int i = 0; i < n; i++) {
-            arr[i] = scanner.nextInt();
+            ints[i] = scanner.nextInt();
         }
-        System.out.println(main.solution(n, m, arr));
+        for (int x : main.solution(n, k, ints)) {
+            System.out.println(x + " ");
+
+        }
     }
 }
