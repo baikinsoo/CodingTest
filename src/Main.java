@@ -1,36 +1,54 @@
-import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Main {
+class Main {
 
-    public ArrayList<Integer> solution(int n, int k, int[] arr) {
+    public int count(int[] arr, int capacity) {
 
-        ArrayList<Integer> answer = new ArrayList<>();
+        int cnt = 1;
+        int point = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] - point >= capacity) {
+                cnt++;
+                point = arr[i];
+            }
+        }
+        return cnt;
+    }
 
-        HashMap<Integer, Integer> HM = new HashMap<>();
+    public int solution(int n, int m, int[] arr) {
 
-        for (int i = 0; i < k; i++) {
-            HM.put(arr[i], HM.getOrDefault(arr[i], 0) + 1);
-        } //여기까지하면 answer를 위한 HM 완성
+        int answer = 0;
+        Arrays.sort(arr);
+        int lt = 1;
+        int rt = arr[n - 1];
+        while (lt <= rt) {
+            int mid = (lt + rt) / 2;
+            if (count(arr, mid) >= m) {
+                answer = mid;
+                rt = mid - 1;
 
-        int lt=0;
+            } else {
+                lt = mid + 1;
 
+            }
+        }
         return answer;
     }
 
     public static void main(String[] args) {
-        Main main = new Main();
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int k = scanner.nextInt();
-        int[] ints = new int[n];
-        for (int i = 0; i < n; i++) {
-            ints[i] = scanner.nextInt();
-        }
-        for (int x : main.solution(n, k, ints)) {
-            System.out.println(x + " ");
 
+        Main main = new Main();
+        Scanner kb = new Scanner(System.in);
+
+        int a = kb.nextInt();
+        int b = kb.nextInt();
+        int[] arr = new int[a];
+
+        for (int i = 0; i < a; i++) {
+            arr[i] = kb.nextInt();
         }
+
+        System.out.println(main.solution(a, b, arr));
     }
 }
